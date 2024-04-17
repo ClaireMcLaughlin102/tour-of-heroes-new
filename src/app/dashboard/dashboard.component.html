@@ -1,0 +1,13 @@
+<mat-card class="heroes-card">
+  <mat-card-content>
+    <h1 class="heroes-title">{{'Top Heroes' | translate}}</h1>
+    <app-hero-search class="hero-search"></app-hero-search>
+    <mat-toolbar class="heroes-toolbar">
+      <div class="hero-buttons">
+        <button mat-button *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]">
+          {{ hero.name }}
+        </button>
+      </div>
+    </mat-toolbar>
+  </mat-card-content>
+</mat-card>

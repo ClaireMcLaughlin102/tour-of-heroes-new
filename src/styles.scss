@@ -1,0 +1,441 @@
+@use '@angular/material' as mat;
+@include mat.core();
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+$my-typography: mat.define-typography-config(
+  $font-family: "Roboto",
+);
+@include mat.typography-hierarchy($my-typography);
+
+//define light/dark text colours
+$dark-primary-text: #000000; // replace #000000 with the color you want
+$light-primary-text: #ffffff; // replace #ffffff with the color you want
+
+// your existing styles
+$mat-primary: (
+  50: #e5f4fa,
+  100: #bee3f3,
+  200: #93d1ec,
+  300: #67bee4,
+  400: #47b0de,
+  500: #26a2d8,
+  600: #229ad4,
+  700: #1c90ce,
+  800: #1786c8,
+  900: #0d75bf,
+  A100: #ebf6ff,
+  A200: #b8dfff,
+  A400: #85c8ff,
+  A700: #6cbdff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+$angular-primary: mat.define-palette($mat-primary);
+
+$md-accent: (
+  main: #626262,
+  lighter: #828282,
+  darker: #424242,
+  200: #626262,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$angular-accent: mat.define-palette($md-accent, main, lighter, darker);
+
+$angular-warn: mat.define-palette(mat.$red-palette);
+
+$angular-default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($angular-default-theme);
+
+$angular-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+.dark-theme {
+  @include mat.all-component-colors($angular-dark-theme);
+}
+
+.dark-theme .mat-mdc-raised-button:not(:disabled) {
+  color: #ffffff !important;
+}
+
+.mat-toolbar.mat-primary {
+  color: #000000;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  margin: 5px;
+}
+
+// Contents of custom-theme.scss
+
+$my-typography: mat.define-typography-config(
+  $font-family: "Roboto",
+);
+@include mat.typography-hierarchy($my-typography);
+
+$mat-primary: (
+  50: #e5f4fa,
+  100: #bee3f3,
+  200: #93d1ec,
+  300: #67bee4,
+  400: #47b0de,
+  500: #26a2d8,
+  600: #229ad4,
+  700: #1c90ce,
+  800: #1786c8,
+  900: #0d75bf,
+  A100: #ebf6ff,
+  A200: #b8dfff,
+  A400: #85c8ff,
+  A700: #6cbdff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+$angular-primary: mat.define-palette($mat-primary);
+
+$md-accent: (
+  main: #626262,
+  lighter: #828282,
+  darker: #424242,
+  200: #626262,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$angular-accent: mat.define-palette($md-accent, main, lighter, darker);
+
+$angular-warn: mat.define-palette(mat.$red-palette);
+
+$angular-default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($angular-default-theme);
+
+$angular-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+.dark-theme {
+  @include mat.all-component-colors($angular-dark-theme);
+}
+
+.dark-theme .mat-mdc-raised-button:not(:disabled) {
+  color: #ffffff !important;
+}
+
+.mat-toolbar.mat-primary {
+  color: #000000;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  margin: 5px;
+}
+
+/* General styles */
+h1, h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4b4e50; /* Use the primary color value for deeppurple-amber theme */
+}
+
+.hero-card {
+  width: 400px; /* Adjust width as needed */
+  margin: auto; /* Center the card horizontally */
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-name {
+  margin-bottom: 10px;
+}
+
+.hero-id {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for the badge */
+.badge {
+  margin-right: 10px; /* Add spacing between badge and hero name */
+}
+
+.add-hero-section {
+  display: flex;
+  align-items: center;
+}
+
+
+.add-hero-section {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding-top: 20px;
+}
+
+.input-and-button-container {
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center items vertically */
+}
+
+.hero-input {
+  margin-right: 10px; /* Adjust margin between input and button */
+}
+
+
+/* Styles for the container */
+.container {
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+/* Styles for the custom card */
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  width: 500px;
+  padding: 20px; /* Add padding to the top and bottom */
+  margin-top: 20px;
+  
+}
+.hero-item {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.delete-icon {
+  margin-left: 10px; /* Adjust margin as needed to create space between the name and the icon */
+}
+
+.heroes-title {
+  text-align: center;
+}
+.hero-buttons {
+  display: flex;
+  width: 100%;
+}
+.hero-buttons button {
+  flex: 1;
+}
+.heroes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-search {
+  align-items: right;
+}
+
+/*messages styling*/
+
+.messages-section {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.messages-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.clear-button {
+  margin-bottom: 10px;
+}
+
+.message {
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mat-toolbar-container {
+  background-color: #1976d2; /* Primary color */
+}
+
+.title {
+  font-size: 24px; /* Larger font size for the title */
+  margin-right: 25px; /* Pushes the title to the left */
+  color: black;
+}
+
+.toolbar-links {
+  color: black;
+  font-size: 18px; /* Font size for the links */
+}
+
+.mat-toolbar-link {
+  color: rgb(7, 7, 7); /* Text color for the links */
+  text-decoration: none; 
+  margin-left: 20px; 
+}
+.language-select-container {
+  margin-left: auto; /* Pushes the container to the right */
+}
+/* styles.css */
+
+.dark-theme {
+  background-color: #333;
+  color: #fff;
+  /* Add additional styles for dark theme */
+}
+/* Apply dark theme to containers and cards */
+.dark-theme .container,
+.dark-theme .custom-card,
+.dark-theme .messages-section,
+.dark-theme .content-container,
+.dark-theme .hero-card,
+.dark-theme .input-and-button-container,
+.dark-theme .custom-card,
+.dark-theme .container,
+.dark-theme .hero-id,
+.dark-theme .input-and-button-container,
+.dark-theme .message,
+.dark-theme .heroes-card,
+.dark-theme .heroes-toolbar,
+.dark-theme .mat-input,
+.dark-theme .hero-search.component,
+.dark-theme .mat-card {
+  background-color: #252323; /* Dark background color */
+  color: #d5d6e1; /* Light text color */
+  accent-color: lightgrey;
+  .hero-buttons {
+    background-color: #888c8f;
+  }
+
+}
+.toggle-container {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+/* responsive application - media queries */
+
+/* Media query for iPhone */
+@media only screen and (max-width: 480px) {
+  /* Add styles specific to iPhone */
+}
+
+/* Media query for iPad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Add styles specific to iPad */
+}
+
+/* Media query for desktop */
+@media only screen and (min-width: 1025px) {
+  /* Add styles specific to desktop */
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

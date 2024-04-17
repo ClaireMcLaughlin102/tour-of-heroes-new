@@ -1,0 +1,22 @@
+<mat-card class="hero-card">
+  <mat-card-content>
+    <table>
+      <tr *ngIf="hero">
+        <td><strong>{{'Hero Name:' | translate}}</strong></td>
+        <td>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="hero.name" placeholder="Name" id="hero-name">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr *ngIf="hero">
+        <td><strong>ID: </strong></td>
+        <td>{{ hero.id }}</td>
+      </tr>
+    </table>
+    <div class="button-container">
+      <button mat-raised-button color="primary" class="back-button" (click)="goBack()">{{'Back' | translate}}</button>
+      <button mat-raised-button color="primary" class="save-button" (click)="save()">{{'Save' | translate}}</button>
+    </div>
+  </mat-card-content>
+</mat-card>

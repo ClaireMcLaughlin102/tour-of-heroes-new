@@ -1,0 +1,30 @@
+<mat-card class="hero-card">
+  <mat-card-header>
+    <mat-card-title>{{'Heroes List' | translate}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes">
+        <div class="hero-item">
+          <a mat-button routerLink="/detail/{{hero.id}}" class="hero-link">
+            <span class="badge">{{hero.id}}</span>
+            <span class="hero-name">{{hero.name}}</span>
+          </a>
+          <button mat-icon-button (click)="delete(hero)" aria-label="Delete hero" class="delete-icon">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+<div class="add-hero-section">
+  <div class="input-and-button-container">
+    <mat-form-field appearance="fill" class="hero-input">
+      <mat-label>{{'Hero name:' | translate}}</mat-label>
+      <input matInput #heroName />
+    </mat-form-field>
+    <button mat-raised-button color="accent" class="add-hero-button" (click)="add(heroName.value); heroName.value=''">{{'Add hero' | translate}}</button>
+  </div>
+</div>

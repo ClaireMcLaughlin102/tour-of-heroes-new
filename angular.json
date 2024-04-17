@@ -22,10 +22,11 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/i18n"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -60,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tour-of-heroes-new:build:production"
+              "buildTarget": "tour-of-heroes-new:build:production"
             },
             "development": {
-              "browserTarget": "tour-of-heroes-new:build:development"
+              "buildTarget": "tour-of-heroes-new:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tour-of-heroes-new:build"
+            "buildTarget": "tour-of-heroes-new:build"
           }
         },
         "test": {
@@ -87,12 +88,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "fd8f0ee3-6f97-4038-b64f-a7c0a1700d99"
   }
 }
