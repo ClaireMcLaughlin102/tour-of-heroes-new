@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tour-of-heroes-new:build:production"
+              "browserTarget": "tour-of-heroes-new:build:production"
             },
             "development": {
-              "buildTarget": "tour-of-heroes-new:build:development"
+              "browserTarget": "tour-of-heroes-new:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "tour-of-heroes-new:build"
+            "browserTarget": "tour-of-heroes-new:build"
           }
         },
         "test": {

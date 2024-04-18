@@ -24,7 +24,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { APP_INITIALIZER } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MessageService } from './message.service';
@@ -67,7 +67,7 @@ export function appInitializerFactory(translate: TranslateService) {
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService), // Use HttpClientInMemoryWebApiModule and provide your in-memory data service
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl:true}), // Use HttpClientInMemoryWebApiModule and provide your in-memory data service
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -78,7 +78,7 @@ export function appInitializerFactory(translate: TranslateService) {
   ],
   bootstrap: [AppComponent],
   providers: [
-    provideAnimationsAsync(),
+    provideAnimations(),
     {
       provide: APP_INITIALIZER,
       useFactory: appInitializerFactory,
