@@ -1,11 +1,11 @@
 <div id="search-component">
   <mat-form-field>
     <mat-label>{{'Hero Search' | translate}}</mat-label>
-    <input matInput #searchBox (input)="search(searchBox.value)" />
+    <input matInput id="searchBox" #searchBox (input)="search(searchBox.value)" />
   </mat-form-field>
 
   <mat-list>
-    <mat-list-item *ngFor="let hero of heroes$ | async">
+    <mat-list-item id="mat-list-item" *ngFor="let hero of heroes$ | async">
       <a matLine routerLink="/detail/{{hero.id}}">{{hero.name}}</a>
     </mat-list-item>
   </mat-list>
